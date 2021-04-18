@@ -10,4 +10,8 @@ class Photo extends Model
         'path',
         'user_id',
     ];
+
+    public function contact() {
+        return $this->hasOne(User::class);
+    }
 }

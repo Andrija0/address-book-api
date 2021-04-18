@@ -12,6 +12,7 @@ class Contact extends Model
         'agency_id',
         'email',
         'web',
+        'photo_id',
     ];
     public function phoneNumbers() {
         return $this->morphMany(PhoneNumber::class, 'phonable');
@@ -22,7 +23,7 @@ class Contact extends Model
     }
 
     public function photo() {
-        return $this->hasOne(Photo::class);
+        return $this->belongsTo(Photo::class);
     }
 
     public function toArray()
