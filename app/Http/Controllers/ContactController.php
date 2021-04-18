@@ -119,8 +119,4 @@ class ContactController extends Controller
 
         return response($contacts, Response::HTTP_OK);
     }
-
-    public function uploadPhoto(Request $request) {
-
-    }
 }
