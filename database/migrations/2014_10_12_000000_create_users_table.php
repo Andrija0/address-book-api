@@ -19,8 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('api_token', 80)->unique()->nullable()->default(null);
+            // Role implemented as an ENUM instead of a separate table for simplicity
+            $table->enum('role', ['contact', 'admin'])->default('contact');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 
